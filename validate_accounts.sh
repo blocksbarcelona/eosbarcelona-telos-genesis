@@ -7,8 +7,8 @@ SCRIPTSDIR=/opt/telos_main/scripts
 rm ./genesis_ok.csv
 rm ./genesis_error.csv
 
-for line in $(tail -n +1 tlos_genesis_by_esobarcelona.csv); do
-    ACCOUNT=$(echo $line | tr "," "\n" | head -3 | tail -1)
+for line in $(tail -n +1 tlos_genesis_by_esobarcelona-precalculated.csv); do
+    	ACCOUNT=$(echo $line | tr "," "\n" | head -3 | tail -1)
 	ORG=$(echo $line | tr -d "\r" | head -1)
 	JSON=$($SCRIPTSDIR/teclos.sh get account $ACCOUNT -j)
 	NAME=$(echo $JSON | jq .total_resources.account_name | cut -d ' ' -f 1 | cut -d '"' -f 2)
