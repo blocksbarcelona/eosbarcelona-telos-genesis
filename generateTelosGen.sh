@@ -8,7 +8,7 @@ sed 's/'\"'//g' ./snapshot.csv  > ./telos_snapshot.csv
 
 TELOSCAP=40000.0000
 rm tlos_genesis_by_esobarcelona.csv
-for line in $(tail -n +1 telos_snapshot.csv); do
+for line in $(tail -n +1 genesis_error.csv); do
    	ACCOUNT=$(echo $line | tr "," "\n" | head -2 | tail -1)
 	#ETH=$(echo $line | tr "," "\n" | head -1 | tail -1)
 	EOSKEY=$(echo $line | tr "," "\n" | head -3 | tail -1)
