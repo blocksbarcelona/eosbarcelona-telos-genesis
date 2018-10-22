@@ -4,10 +4,10 @@
 
 SCRIPTSDIR=/opt/telos_main/scripts
 
-rm ./genesis_ok.csv
-rm ./genesis_error.csv
+rm ./validation_ok.csv
+rm ./validation_error.csv
 
-for line in $(tail -n +1 tlos_genesis_by_esobarcelona-precalculated.csv); do
+for line in $(tail -n +1 telos_snapshot.csv); do
     	ACCOUNT=$(echo $line | tr "," "\n" | head -3 | tail -1)
 	ORG=$(echo $line | tr -d "\r" | head -1)
 	JSON=$($SCRIPTSDIR/teclos.sh get account $ACCOUNT -j)
@@ -18,9 +18,9 @@ for line in $(tail -n +1 tlos_genesis_by_esobarcelona-precalculated.csv); do
 	TOTAL=$(echo "$NET_RES + $CPU_RES + $LIQ" | bc)
 
   	if  [ $NAME ]; then
-		echo "$ORG,$TOTAL" >> genesis_ok.csv
+		echo "$ORG,$TOTAL" >> validation_ok.csv
 	else
-		echo "$line" >> genesis_error.csv
+		echo "$line" >> validation_error.csv
 	fi
 done
 

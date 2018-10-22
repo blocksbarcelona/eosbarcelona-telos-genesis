@@ -6,7 +6,7 @@
 SCRIPTSDIR=/opt/telos_main/scripts
 COUNTER=1
 
-for line in $(tail -n +1 tlos_genesis_by_esobarcelona-precalculated.csv); do
+for line in $(tail -n +1 telos_snapshot.csv); do
    	ACCOUNT=$(echo $line | tr "," "\n" | head -3 | tail -1)
 	BALANCE=$(echo $line | tr "," "\n" | head -4 | tail -1)
 	KEY=$(echo $line | tr "," "\n" | head -2 | tail -1)
