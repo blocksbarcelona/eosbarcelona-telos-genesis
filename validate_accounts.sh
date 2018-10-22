@@ -8,7 +8,7 @@ rm ./validation_ok.csv
 rm ./validation_error.csv
 
 for line in $(tail -n +1 telos_snapshot.csv); do
-    	ACCOUNT=$(echo $line | tr "," "\n" | head -3 | tail -1)
+    	ACCOUNT=$(echo $line | tr "," "\n" | head -2 | tail -1)
 	ORG=$(echo $line | tr -d "\r" | head -1)
 	JSON=$($SCRIPTSDIR/teclos.sh get account $ACCOUNT -j)
 	NAME=$(echo $JSON | jq .total_resources.account_name | cut -d ' ' -f 1 | cut -d '"' -f 2)
