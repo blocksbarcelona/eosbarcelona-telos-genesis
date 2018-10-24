@@ -21,7 +21,7 @@ for row in csv_f:
 		cpu = row[4]
 		net = row [5]
 		liq = row[6]
-	
+
 #		print(account)
 
 		totalCSV = float(totalCSV) + float(total)
@@ -35,17 +35,12 @@ for row in csv_f:
 		acc_cpu,waste = acc_resources["cpu_weight"].split()
 
 		totalInChain = float(totalInChain) + float(acc_liquid) + float(acc_net) + float(acc_cpu)
-	
-		if (acc_liquid != liq):
-			print( account +'- error liquid: ' + liq + '!=' + acc_liquid)
-		if (acc_cpu != cpu):
-			print( account + '- error cpu: ' + cpu + '!=' + acc_cpu)
-		if (acc_net != net):
-			print( account + '- error net: ' + net + '!=' + acc_net)
-		#print(account)
+
 		tmp+=1
 		i+=1
 		if (tmp == 100):
 			print(i)
 			tmp=0
+
 print(totalCSV)
+print(totalInChain)
