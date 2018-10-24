@@ -20,7 +20,7 @@ $TECLOS/teclos.sh create account eosio eosio.bpadj $KEY
 #contracts
 $TECLOS/teclos.sh set contract eosio.token $DIR/build/contracts/eosio.token
 $TECLOS/teclos.sh push action eosio.token create '[ "eosio", "10000000000.0000 TLOS", 0, 0, 0]' -p eosio.token
-$TECLOS/teclos.sh push action eosio.token issue '[ "eosio", "178473249.3124 TLOS", "Genesis Snapshot" ]' -p eosio
+$TECLOS/teclos.sh push action eosio.token issue '[ "eosio", "178473249.3125 TLOS", "Genesis Snapshot" ]' -p eosio
 $TECLOS/teclos.sh push action eosio.token issue '[ "eosio", "6000000.0000 TLOS", "Telos Founders Reward Pool Issue" ]' -p eosio
 $TECLOS/teclos.sh push action eosio.token issue '[ "eosio", "1000000.0000 TLOS", "Telos Community Reward Pool Issue" ]' -p eosio
 $TECLOS/teclos.sh push action eosio.token issue '[ "eosio", "6000000.0000 TLOS", "Telos Foundation Issue" ]' -p eosio
