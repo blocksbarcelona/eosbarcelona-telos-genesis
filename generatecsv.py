@@ -14,6 +14,7 @@ def roundup(a, digits=0):
     return round(math.ceil(a / n) * n, digits)
 
 for row in csv_f:
+    eth = row[0]
     account = row[1]
     eoskey = row[2]
     balance = float(row[3])
@@ -24,7 +25,7 @@ for row in csv_f:
         liquid = 0.1
     else:
         if (balance > 3) and (balance <= 11):
-            liquid = 0.2
+            liquid = 2
         else:
             liquid = 10
 
