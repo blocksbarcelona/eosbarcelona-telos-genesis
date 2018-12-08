@@ -1,7 +1,7 @@
 import csv
 import math
 
-f = open('snapshot.csv')
+f = open('tlos_genesis_snapshot.csv')
 csv_f = csv.reader(f)
 i = 1
 
@@ -14,10 +14,10 @@ def roundup(a, digits=0):
     return round(math.ceil(a / n) * n, digits)
 
 for row in csv_f:
-    eth = row[0]
-    account = row[1]
-    eoskey = row[2]
-    balance = float(row[3])
+    eth = row[1]
+    account = row[2]
+    eoskey = row[3]
+    balance = row[4]
     if balance > 40000:
         balance = 40000
     
