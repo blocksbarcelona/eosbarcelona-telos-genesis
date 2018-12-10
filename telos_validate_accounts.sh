@@ -1,15 +1,15 @@
 #!/bin/bash
-#echo -e "============================================================\n"
-#echo -e "=================== Telos Genesis accounts =================\n"
-#echo -e "============================================================\n"
-#echo -e " 1) Downloading tlos_genesis_snapshot.csv\n"
-#wget https://raw.githubusercontent.com/Telos-Foundation/snapshots/master/tlos_genesis_snapshot.csv
-#sed -i '1d' tlos_genesis_snapshot.csv
-#echo -e "2) Validating genesis accounts\n"
-#./createTelosCsv_faster.sh
-#rm tlos_genesis_snapshot.csv
-#python 00-validate-genesis.py
-#rm telos_snapshot.csv
+echo -e "============================================================\n"
+echo -e "=================== Telos Genesis accounts =================\n"
+echo -e "============================================================\n"
+echo -e " 1) Downloading tlos_genesis_snapshot.csv\n"
+wget https://raw.githubusercontent.com/Telos-Foundation/snapshots/master/tlos_genesis_snapshot.csv
+sed -i '1d' tlos_genesis_snapshot.csv
+echo -e "2) Validating genesis accounts\n"
+./createTelosCsv_faster.sh
+rm tlos_genesis_snapshot.csv
+python 00-validate-genesis.py
+rm telos_snapshot.csv
 
 echo -e "============================================================\n"
 echo -e "================= Telos Initial BP accounts ================\n"
