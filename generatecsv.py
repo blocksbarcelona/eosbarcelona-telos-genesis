@@ -18,18 +18,18 @@ for row in csv_f:
     account = row[2]
     eoskey = row[3]
     balance = row[4]
-    if balance > 40000:
+    if float(balance) > 40000:
         balance = 40000
     
-    if (balance <= 3):
+    if (float(balance) <= 3):
         liquid = 0.1
     else:
-        if (balance > 3) and (balance <= 11):
+        if (float(balance) > 3) and (float(balance) <= 11):
             liquid = 2
         else:
             liquid = 10
 
-    tmp_balance = balance - liquid
+    tmp_balance = float(balance) - float(liquid)
     cpu =  roundup(tmp_balance/2,4)
     bandwith = tmp_balance - cpu
 
